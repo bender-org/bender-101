@@ -1,0 +1,27 @@
+title: Introduction to Bender
+tagline: Take your first steps in the world of futurama
+description: If you are looking for a quick and fun introduction to the exciting world of futurama, this course is for you. 
+template:
+  name: bender-101
+  repo: bender-101-template
+  description: "A robot powered training repository :robot:"
+before:
+  - type: createIssue
+    title: Welcome
+    body: 01-welcome.md
+  - type: updateBranchProtection
+
+steps:
+  - title: Who is Bender?
+    description: Get to know Bender up close and personal
+    link: "{{ repoUrl }}/issues/1"
+    actions:
+      - type: respond
+        with: 00-openapr.md
+        data:
+          pagesUrl: "%actions.pagesUrl.data.html_url%"
+        issue: Welcome
+
+
+tags:
+  - Learning Lab
