@@ -14,15 +14,22 @@ before:
 steps:
   - title: Who is Bender?
     description: Get to know Bender up close and personal
-    event: issues.closed
-    link: "{{ repoUrl }}/issues/1"
-    action_id: newissue01
+    event: issue_comment.created
     actions:
+      - type: createIssue
+        title: Bender's best Friend
+        body: 02-benders-friend.md
+        # Store the response for this new issue by assigning an action_id
+        action_id: new_issue
+        # Close the issue the user just commented on
+      - type: closeIssue
+        # Respond in the issue the user just commented on
       - type: respond
         with: 01_successful-close.md
+        # Include a `data` object to provide some template variables
         data:
-          pagesUrl: "%actions.newissue01.data.html_url%"
-
+          # Reference the response of the `new_issue` action
+          nextIssueUrl: '%actions.new_issue.data.html_url%'
 
 
 tags:
