@@ -14,13 +14,15 @@ before:
 steps:
   - title: Who is Bender?
     description: Get to know Bender up close and personal
+    event: issues.closed
     link: "{{ repoUrl }}/issues/1"
+    action_id: newissue01
     actions:
       - type: respond
-        with: 00-openapr.md
+        with: 01_successful-close.md
         data:
-          pagesUrl: "%actions.pagesUrl.data.html_url%"
-        issue: Welcome
+          pagesUrl: "%actions.newissue01.data.html_url%"
+
 
 
 tags:
