@@ -1,10 +1,12 @@
 title: Introduction to Bender
 tagline: Take your first steps in the world of futurama
-description: If you are looking for a quick and fun introduction to the exciting world of futurama, this course is for you. 
+description: >-
+  If you are looking for a quick and fun introduction to the exciting world of
+  futurama, this course is for you.
 template:
   name: bender-101
   repo: bender-101-template
-  description: "A robot powered introduction repository :robot:"
+  description: 'A robot powered introduction repository :robot:'
 before:
   - type: createIssue
     title: Welcome
@@ -13,26 +15,21 @@ before:
 steps:
   - title: Character Information
     description: Get to know Bender's character information
-    event: issue_comment.created 
+    event: issue_comment.created
     actions:
       - type: createIssue
         title: Before Planet Express
         body: 02-before-planet-express.md
-        # Store the response for this new issue by assigning an action_id
         action_id: new_issue1
-        # Close the issue the user just commented on
       - type: closeIssue
-        # Respond in the issue the user just commented on
       - type: respond
         with: 01_successful-close.md
-        # Include a `data` object to provide some template variables
         data:
-          # Reference the response of the `new_issue` action
           nextIssueUrl: '%actions.new_issue1.data.html_url%'
-
+    link: '{{ repoUrl }}/issues/1'
   - title: Before Planet Express
     description: Early life of Bender before Planet Express
-    event: issue_comment.created 
+    event: issue_comment.created
     actions:
       - type: createIssue
         title: Personality Traits
@@ -43,10 +40,9 @@ steps:
         with: 02_successful-close.md
         data:
           nextIssueUrl: '%actions.new_issue2.data.html_url%'
-
   - title: Personality Traits
     description: Quirky traits of Bender the robot
-    event: issue_comment.created 
+    event: issue_comment.created
     actions:
       - type: createIssue
         title: Family Tree
@@ -57,10 +53,9 @@ steps:
         with: 03_successful-close.md
         data:
           nextIssueUrl: '%actions.new_issue3.data.html_url%'
-
   - title: Family Tree
     description: Friends and Family of Bender
-    event: issue_comment.created 
+    event: issue_comment.created
     actions:
       - type: createIssue
         title: Gallery
@@ -71,14 +66,12 @@ steps:
         with: 04_successful-close.md
         data:
           nextIssueUrl: '%actions.new_issue4.data.html_url%'
-
   - title: Gallery
     description: The End
-    event: issue_comment.created 
+    event: issue_comment.created
     actions:
       - type: closeIssue
       - type: respond
         with: 05_successful-close.md
-
 tags:
   - Futurama
