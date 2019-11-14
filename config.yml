@@ -10,26 +10,18 @@ before:
     title: Welcome
     body: 01-welcome.md
   - type: updateBranchProtection
-
 steps:
   - title: Character Information
     description: Get to know Bender's character information
     event: issue_comment.created
     action_id: issueCommentReply
-    actions:
-    
+    actions:    
       - type: gate
         left: "%actions.issueCommentReply.data.body%"
         operator: "!=="
         right: "True"
-        else:
           type: respond
           with: 01_unsuccessful-close.md
-          
-      - type: gate
-        left: "%actions.issueCommentReply.data.body%"
-        operator: "==="
-        right: "True"
         else:
           type: createIssue
           title: Before Planet Express
