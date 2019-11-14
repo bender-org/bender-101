@@ -11,7 +11,7 @@ Bender is a strong proponent for robots obtaining human rights, and gets very up
 
 ## :keyboard: Trivia
 
-1. Bender is sensitive Robot. Is this true or false?
+1. Bender is a sensitive Robot. Is this true or false?
 
 > _I may take up to a minute to respond as I wait for events from your repository. If you don't see anything after a minute, refresh this page_.
 
