@@ -1,4 +1,7 @@
 
+# Thats all folks! Now you know about Bender!
+
+
 ![](http://images2.fanpop.com/images/photos/3300000/Bender-futurama-3365092-1600-1000.jpg)
 
 
