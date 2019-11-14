@@ -29,7 +29,7 @@ steps:
         data:
           # Reference the response of the `new_issue` action
           nextIssueUrl: '%actions.new_issue1.data.html_url%'
-steps:
+
   - title: Before Planet Express
     description: Early life of Bender before Planet Express
     event: issue_comment.created 
@@ -44,7 +44,6 @@ steps:
         data:
           nextIssueUrl: '%actions.new_issue2.data.html_url%'
 
-steps:
   - title: Personality Traits
     description: Quirky traits of Bender the robot
     event: issue_comment.created 
@@ -59,7 +58,6 @@ steps:
         data:
           nextIssueUrl: '%actions.new_issue3.data.html_url%'
 
-steps:
   - title: Family Tree
     description: Friends and Family of Bender
     event: issue_comment.created 
@@ -74,7 +72,6 @@ steps:
         data:
           nextIssueUrl: '%actions.new_issue4.data.html_url%'
 
-steps:
   - title: Gallery
     description: The End
     event: issue_comment.created 
