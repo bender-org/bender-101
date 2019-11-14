@@ -20,7 +20,3 @@
 1. Professor Farnsworth is Bender's Father. Is this true or false?
 
 > _I may take up to a minute to respond as I wait for events from your repository. If you don't see anything after a minute, refresh this page_.
-
-
-<hr>
-<h3 align="center">I'll respond in this issue after GitHub Pages has finished deploying your site.</h3>
