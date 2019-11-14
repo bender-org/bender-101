@@ -15,78 +15,36 @@ steps:
   - title: Character Information
     description: Get to know Bender's character information
     event: issue_comment.created
+    action_id: issueCommentReply
     actions:
-      - type: createIssue
-        title: Bender's best Friend
-        body: 02-benders-friend.md
-        # Store the response for this new issue by assigning an action_id
-        action_id: new_issue
-        # Close the issue the user just commented on
-      - type: closeIssue
-        # Respond in the issue the user just commented on
-      - type: respond
-        with: 01_successful-close.md
-        # Include a `data` object to provide some template variables
-        data:
-          # Reference the response of the `new_issue` action
-          nextIssueUrl: '%actions.new_issue.data.html_url%'
+    
+      - type: gate
+        left: "%actions.issueCommentReply.data.body%"
+        operator: "!=="
+        right: "True"
+        else:
+          type: respond
+          with: 01_unsuccessful-close.md
           
-  - title: Before Planet Express
-    description: 
-    event: issue_comment.created
-    actions:
-      - type: createIssue
-        title: 
-        body: 
-        action_id: new_issue
-      - type: closeIssue
-      - type: respond
-        with: 
-        data:
-          nextIssueUrl: '%actions.new_issue.data.html_url%'
-
-  - title: Personality Traits
-    description: 
-    event: issue_comment.created
-    actions:
-      - type: createIssue
-        title: 
-        body: 
-        action_id: new_issue
-      - type: closeIssue
-      - type: respond
-        with: 
-        data:
-          nextIssueUrl: '%actions.new_issue.data.html_url%'
-
-  - title: Family Tree
-    description: 
-    event: issue_comment.created
-    actions:
-      - type: createIssue
-        title: 
-        body: 
-        action_id: new_issue
-      - type: closeIssue
-      - type: respond
-        with: 
-        data:
-          nextIssueUrl: '%actions.new_issue.data.html_url%'
-
-  - title: Gallery
-    description: 
-    event: issue_comment.created
-    actions:
-      - type: createIssue
-        title: 
-        body: 
-        action_id: new_issue
-      - type: closeIssue
-      - type: respond
-        with: 
-        data:
-          nextIssueUrl: '%actions.new_issue.data.html_url%'
-
-
+      - type: gate
+        left: "%actions.issueCommentReply.data.body%"
+        operator: "==="
+        right: "True"
+        else:
+          type: createIssue
+          title: Before Planet Express
+          body: 02-before-planet-express.md
+          # Store the response for this new issue by assigning an action_id
+          action_id: new_issue
+          # Close the issue the user just commented on
+          type: closeIssue
+          # Respond in the issue the user just commented on
+          type: respond
+          with: 01_successful-close.md
+          # Include a `data` object to provide some template variables
+          data:
+            # Reference the response of the `new_issue` action
+            nextIssueUrl: '%actions.new_issue.data.html_url%'
+          
 tags:
   - Futurama
