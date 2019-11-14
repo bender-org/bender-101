@@ -4,7 +4,7 @@ description: If you are looking for a quick and fun introduction to the exciting
 template:
   name: bender-101
   repo: bender-101-template
-  description: "A robot powered training repository :robot:"
+  description: "A robot powered introduction repository :robot:"
 before:
   - type: createIssue
     title: Welcome
@@ -12,8 +12,8 @@ before:
   - type: updateBranchProtection
 
 steps:
-  - title: Who is Bender?
-    description: Get to know Bender up close and personal
+  - title: Character Information
+    description: Get to know Bender's character information
     event: issue_comment.created
     actions:
       - type: createIssue
@@ -30,7 +30,63 @@ steps:
         data:
           # Reference the response of the `new_issue` action
           nextIssueUrl: '%actions.new_issue.data.html_url%'
+          
+  - title: Before Planet Express
+    description: 
+    event: issue_comment.created
+    actions:
+      - type: createIssue
+        title: 
+        body: 
+        action_id: new_issue
+      - type: closeIssue
+      - type: respond
+        with: 
+        data:
+          nextIssueUrl: '%actions.new_issue.data.html_url%'
+
+  - title: Personality Traits
+    description: 
+    event: issue_comment.created
+    actions:
+      - type: createIssue
+        title: 
+        body: 
+        action_id: new_issue
+      - type: closeIssue
+      - type: respond
+        with: 
+        data:
+          nextIssueUrl: '%actions.new_issue.data.html_url%'
+
+  - title: Family Tree
+    description: 
+    event: issue_comment.created
+    actions:
+      - type: createIssue
+        title: 
+        body: 
+        action_id: new_issue
+      - type: closeIssue
+      - type: respond
+        with: 
+        data:
+          nextIssueUrl: '%actions.new_issue.data.html_url%'
+
+  - title: Gallery
+    description: 
+    event: issue_comment.created
+    actions:
+      - type: createIssue
+        title: 
+        body: 
+        action_id: new_issue
+      - type: closeIssue
+      - type: respond
+        with: 
+        data:
+          nextIssueUrl: '%actions.new_issue.data.html_url%'
 
 
 tags:
-  - Learning Lab
+  - Futurama
